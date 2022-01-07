@@ -1,0 +1,90 @@
+High order componentes y custom hooks:
+Un high order es una funcioón que devuelve un componente.
+Pero ese hig order inyecta props, un custom hook es opcional.
+
+Un custom hook es más potente y fácil de hacer.
+
+Contexto: Es un objeto "mágico" en donde react puede acceder a sus componentes
+sin tener que pasarselo para parámetros ni inyectado. Podemos acceder a él desde cualquier sitio.
+Tiene un consumidor y un proveedor.
+Puede haber más de un context.
+
+Los contextos se pueden utilizar para tener un contexto global, un contexto para 
+un carrito de compras, un contexto para la i18n internacionalización.
+También se podría utilizar para evitar el pasar props entre componentes entre componentes. ¿drop drailing?
+Pero también puede servir para pasar un "prop" a hermanos.
+Podemos guardar colores, temas, personalización del usuario.
+Con el i18n podemos tener en el objeto con todas las traducciones.
+
+¿useContext o redux? 
+useContext para aplicaciones pequeñas
+redux para medianax
+Para aplicaciones grandes... (quizás relay, React Apolo, o ISR)?
+
+UseRef:
+Es como un baul, porque nos permite guardar valores entre renderizado se mantendrá inalterado
+
+Promise.resolve: Envolver un valo rne una promesa.
+
+Suspend: NOs permite evitar la llamada de la red, sino también cargar
+el js solo cuando lo necesitemos. Es decir, vamos a separar a esa parte de js
+y solamente lo cargará cuando sea visible.
+El "fallback" de Suspense, es algo que se muestra (debe ser un elemento) mientras se carga el componente. 
+Podemo sutiliza react-content-loader, el cual es com oun skeleton
+
+https://github.com/danilowoz/react-content-loader - Librería
+https://skeletonreact.com/ - Editor
+
+
+Ejemplos de estos sería en TrendingSearches
+
+Gif.jsx:
+
+// Este es un ejemplo super claro de React.memo, porque en vez de renderizar gif por gif, solo renderiza el padre
+// Los objtoes y los arrays son referencias, por lo tanto, si creamos un nuevo objeto
+// react solo revisará si son iguales al anterior, no hará una deepEqual,
+// por lo tanto, al agregar una nueva propiedad desde ListOfGifs que es diferente, rompe el React.memo
+
+// Esto es lo que hace el Memo, más o menos. Compara el valor anterior y el siguiente
+// export default React.memo(Gif, (prevProps, nextProps) => {
+//   return prevProps === nextProps;
+// })
+
+// Para solucionar esto, podríamos solo comparar algo en específico, como el id. Para no tener que comparar el objeto entero
+// export default React.memo(Gif, (prevProps, nextProps) => {
+//   return prevProps.id === nextProps.id;
+// })
+
+// Gifs.jsx
+
+19:00
+
+2:19:50
+
+
+react-helmet o react-head para SEO
+
+react-head 1.4kb más pequeña, similar a helmet
+react-helmet 5.9kb más completa y más comunidad
+
+ambos son compatibles con SSR
+
+bundlephobia y packagephobia
+
+useRef: Es un valor que se guardará entre renderizados.
+
+
+QUOKKA
+Live comments: /*?*/
+Live comments: /*? ($.length > 4 ? 1 : 2) */
+
+a.b()/*?*/.c().d()
+a.b().c().d() /*?*/
+// or just
+a.b().c().d() //?
+
+Live performance testing
+/*?.*/
+
+And we can combine
+//?. $

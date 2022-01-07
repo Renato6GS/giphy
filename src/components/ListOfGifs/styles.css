@@ -1,0 +1,57 @@
+:root {
+  --results-columns: 2;
+}
+
+.ListOfGifs {
+  width: 90%;
+  display: grid;
+  min-height: 100vh; /* Con esto nos aseguramos que se produzca el lazyLoad en tendencias */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: masonry; /* Solo funciona en una versión beta de firefox */
+  gap: 0 16px;
+  align-items: center;
+}
+
+.ListOfGifs-item {
+  background-color: #eee;
+  display: inline-block;
+  width: 90%;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --results-columns: 3;
+  }
+}
+
+@media (min-width: 800px) {
+  :root {
+    --results-column: 4;
+  }
+}
+/* .ListOfGifs {
+  column-count: var(--results-columns);
+  column-gap: 0.5em;
+  min-height: 100vh; /* Con esto nos aseguramos que se produzca el lazyLoad en tendencias */
+/* } */
+
+/* .ListOfGifs-item {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  background-color: #eee;
+  display: inline-block;
+  width: 90%;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --results-columns: 3;
+  }
+}
+
+@media (min-width: 800px) {
+  :root {
+    --results-column: 4;
+  }
+} */
