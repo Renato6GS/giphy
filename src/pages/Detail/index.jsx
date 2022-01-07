@@ -5,11 +5,11 @@ import Gif from 'components/Gif';
 import Spinner from 'components/Spinner';
 
 import useSingleGif from 'hooks/useSingleGif';
-import useSEO from 'hooks/useSEO';
+// import useSEO from 'hooks/useSEO';
 
 export default function Detail({ params }) {
   const { gif, isLoading, isError } = useSingleGif({ id: params.id });
-  const titleDocument = gif ? gif.title : '';
+  // const titleDocument = gif ? gif.title : '';
 
   // useSEO({ title: titleDocument, description: `Detail of ${titleDocument}` });
 
