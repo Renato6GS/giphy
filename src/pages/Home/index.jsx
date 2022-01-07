@@ -32,6 +32,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
+        <link rel='canonical' href='https://giphy-rho.vercel.app/' />
         <title>Home | Giphy</title>
       </Helmet>
       <SearchForm onSubmit={handleSubmit} />
